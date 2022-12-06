@@ -11,30 +11,30 @@
 
 #input
 
-import reportFunctions as rf
+import reportFunctions as repFunc
 
 def main():
-    rf.resetBillingFile()
+    repFunc.resetBillingFile()
     again = 'y'
     TOTAL_WEEKS = 4.00
     OVERTIME_CUTOFF = 160.00
     RATE_INCREASE = 1.05
     while again == 'y':
-        employee = rf.readEmployeeName("Employee Name: ")
-        rate = rf.readHourlyRate("Hourly Rate: ")
-        week1 = rf.readWeeklyHours("Enter hours worked for week 1: ")
-        week2 = rf.readWeeklyHours("Enter hours worked for week 2: ")
-        week3 = rf.readWeeklyHours("Enter hours worked for week 3: ")
-        week4 = rf.readWeeklyHours("Enter hours worked for week 4: ")
+        employee = repFunc.readEmployeeName("Employee Name: ")
+        rate = repFunc.readHourlyRate("Hourly Rate: ")
+        week1 = repFunc.readWeeklyHours("Enter hours worked for week 1: ")
+        week2 = repFunc.readWeeklyHours("Enter hours worked for week 2: ")
+        week3 = repFunc.readWeeklyHours("Enter hours worked for week 3: ")
+        week4 = repFunc.readWeeklyHours("Enter hours worked for week 4: ")
         totalHours = week1 + week2 + week3 + week4
         averageHours = totalHours/TOTAL_WEEKS
 #processing
-        rf.writeBillingFile(employee, rate, week1, week2, week3, week4)
+        repFunc.writeBillingFile(employee, rate, week1, week2, week3, week4)
         if totalHours > OVERTIME_CUTOFF:
             overtimeRate = round(rate * RATE_INCREASE, 2)
             overtime = totalHours - OVERTIME_CUTOFF
             overtimeAmount = round(overtime * overtimeRate, 2)
-            totalPay = rf.totalPayYesOT(rate, totalHours, OVERTIME_CUTOFF)
+            totalPay = repFunc.totalPayYesOT(rate, totalHours, OVERTIME_CUTOFF)
             invoiceAmount = totalPay - overtimeAmount
             workStatement = '\n'+employee+' worked '+ format(overtime, ',.2f')+ \
                             ' hours of overtime.\n'
@@ -49,7 +49,7 @@ def main():
         else:
             overtime = 0.00
             overtimeAmount = 0.00
-            totalPay = rf.totalPayNoOT(rate, totalHours)
+            totalPay = repFunc.totalPayNoOT(rate, totalHours)
             workStatement = '\n'+employee+' worked no overtime.\n'
             billableHours = 'Regular Hours: '+\
                     format(totalHours - overtime, ',.2f')+ ' @ $' +\

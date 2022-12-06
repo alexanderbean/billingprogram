@@ -1,4 +1,4 @@
-import reportWrite as rw, reportBuild as rb, reportFunctions as rf
+import reportWrite as repWrite, reportAdHoc as repAdHoc, reportFunctions as repFunc
 
 def main():
     loopControl = True
@@ -14,9 +14,9 @@ def main():
             if option == 0:
                 loopControl = False
             elif option == 1:
-                rw.main()
+                repWrite.main()
             elif option == 2:
-                rb.main()
+                repAdHoc.main()
             else:
                 print('Please enter an available option.\n')
 
