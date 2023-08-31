@@ -1,3 +1,7 @@
+# billingprogram
+Spring 2022 - Billing & Payroll Application
+
+
 This is a payroll program created over the course of my Spring 2022 semester at Bryant University.
 
 To run the program, run through reportMenu.
