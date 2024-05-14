@@ -1,3 +1,12 @@
+# ------------------------------------------------------------------
+# Author: Alexander Bean & Raj Khanderia
+# Program:
+#
+# Description:
+# This is the menu module that ties all modules together. Includes
+# main calls to write billing info and to build the ad hoc report.
+# ------------------------------------------------------------------
+
 import reportWrite as repWrite, reportAdHoc as repAdHoc, reportFunctions as repFunc
 
 def main():
