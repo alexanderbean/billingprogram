@@ -1,3 +1,12 @@
+# ------------------------------------------------------------------
+# Author: Alexander Bean & Raj Khanderia
+# Program:
+#
+# Description:
+# This is a program that contains all the custom functions used
+# within Program4 and Program 5.
+# ------------------------------------------------------------------
+
 def formMyList():
     
     infile = open("billing.txt", "r")
